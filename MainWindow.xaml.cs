@@ -19,7 +19,7 @@ namespace wykresCw
                     double.TryParse(txtC.Text, out double c))
                 {
                     Window xd = new NoweOkno(a, b, c);
-                    xd.ShowDialog();
+                    xd.Show();
                 }
                 else
                 {

@@ -5,6 +5,10 @@
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         Title="Quadratic Function Plot" Height="400" Width="600">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <lvc:CartesianChart Grid.Row="2" x:Name="chart">
             <lvc:CartesianChart.Series>
                 <lvc:LineSeries Values="{Binding ChartValues}" LineSmoothness="1" Title="y = ax^2 + bx + c"/>
@@ -17,6 +21,12 @@
             </lvc:CartesianChart.AxisY>
         </lvc:CartesianChart>
 
-        <Button Content="Zapisz Wykres" Click="SaveChartImage_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
+        <Button Content="Zapisz Wykres" Click="SaveChartImage_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" Grid.Row="0" Background="#C9DAE8">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Window>
